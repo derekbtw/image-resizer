@@ -1,0 +1,55 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(name="description" content="")
+    meta(name="author" content="Derek Bytheway")
+    link(rel="icon" href="/favicon.ico")
+    title=title
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css")
+    link(rel="stylesheet" href="/style.css")
+
+  body
+    main.container.my-5(role="main")
+      .jumbo.bg-light.shadow-sm
+        h1 Image Resizer
+        p.lead This is a simple image resize service. Simply select your image and the width you want to change it to.
+
+    .container
+      .row.pb-5
+        .col-md-6
+          #alert.alert.alert-danger
+          h2 Image Resizer
+          p Provide #[b width], #[b height] or #[b both]. Must be 1280 or smaller.
+          p Entering one resizes the other with the same ratio. Entering both does a crop-center to achieve the same result.
+
+          form(method="post" action="./" enctype="multipart/form-data")
+            .form-group
+                label(for="file") Image File
+                input#file.form-control-file(type="file" name="image")
+
+            .row.mb-4
+              .col
+                label.text-primary.font-weight-bold(for="width") Width
+                input#width.form-control.border-primary(type="text" name="width" aria-describedby="widthHelp" placeholder="640")
+                small#widthHelp.form-text.text-muted The width of the resized image
+
+              .col
+                label.text-primary.font-weight-bold(for="height") Height
+                input#height.form-control.border-primary(type="text" name="height" aria-describedby="heightHelp" placeholder="480")
+                small#heightHelp.form-text.text-muted The height of the resized image
+
+            button.btn.btn-primary(type="submit") Submit
+
+        .col-md-6.pl-md-5
+          h2 Image Preview
+          img#image.img-fluid(src="image-resizer-320.png")
+
+    footer.container.d-none
+      p &copy; 2018 &mdash; Released under the MIT License.
+
+    script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js")
+    script(src="app.js")

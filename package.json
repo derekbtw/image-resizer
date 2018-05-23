@@ -1,0 +1,32 @@
+{
+  "name": "image-resizer",
+  "version": "0.1.0",
+  "description": "Image Resizing App",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "sharp": "^0.20.0",
+    "multer": "^1.3.0",
+    "morgan": "^1.9.0",
+    "pug": "^2.0.1",
+    "serve-favicon": "^2.4.5"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://github.com/derekbtw/image-sizer"
+  },
+  "keywords": [
+    "node",
+    "image",
+    "resize",
+    "resizer",
+    "sizer",
+    "express"
+  ],
+  "license": "MIT"
+}

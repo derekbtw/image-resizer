@@ -132,7 +132,7 @@ app.use((err, req, res, next) => {
 
 //----------------------------------------------------
 // server
-const port = 8000
+const port = process.env.PORT
 const server = http.createServer()
 server.on('request', app)
 server.listen(port, () => {
